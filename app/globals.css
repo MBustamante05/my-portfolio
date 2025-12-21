@@ -5,3 +5,151 @@ body {
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+/* Project color palette helper classes (hex / rgba / hsla) */
+/* Color Theme Swatches in Hex */
+.portfolio-1-hex {
+  color: #bfbab0;
+}
+.portfolio-2-hex {
+  color: #252422;
+}
+.portfolio-3-hex {
+  color: #fffdf1;
+}
+.portfolio-4-hex {
+  color: #403d38;
+}
+.portfolio-5-hex {
+  color: #eb5e28;
+}
+
+/* Shorter, more convenient aliases */
+.c-muted {
+  color: #bfbab0;
+} /* portfolio-1 */
+.c-primary {
+  color: #403d38;
+} /* portfolio-2 */
+.c-inverse {
+  color: #fffdf1;
+} /* portfolio-3 */
+.c-secondary {
+  color: #252422;
+} /* portfolio-4 */
+.c-accent {
+  color: #eb5e28;
+} /* portfolio-5 */
+
+/* Color Theme Swatches in RGBA */
+.portfolio-1-rgba {
+  color: rgba(191, 186, 176, 1);
+}
+.portfolio-2-rgba {
+  color: rgba(37, 36, 34, 1);
+}
+.portfolio-3-rgba {
+  color: rgba(255, 253, 241, 1);
+}
+.portfolio-4-rgba {
+  color: rgba(64, 61, 56, 1);
+}
+.portfolio-5-rgba {
+  color: rgba(235, 94, 40, 1);
+}
+
+/* RGBA aliases */
+.c-muted-rgba {
+  color: rgba(191, 186, 176, 1);
+}
+.c-primary-rgba {
+  color: rgba(37, 36, 34, 1);
+}
+.c-inverse-rgba {
+  color: rgba(255, 253, 241, 1);
+}
+.c-secondary-rgba {
+  color: rgba(64, 61, 56, 1);
+}
+.c-accent-rgba {
+  color: rgba(235, 94, 40, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.portfolio-1-hsla {
+  color: hsla(39, 10, 71, 1);
+}
+.portfolio-2-hsla {
+  color: hsla(39, 4, 13, 1);
+}
+.portfolio-3-hsla {
+  color: hsla(51, 100, 97, 1);
+}
+.portfolio-4-hsla {
+  color: hsla(37, 6, 23, 1);
+}
+.portfolio-5-hsla {
+  color: hsla(16, 82, 53, 1);
+}
+
+/* HSLA aliases */
+.c-muted-hsla {
+  color: hsla(39, 10, 71, 1);
+}
+.c-primary-hsla {
+  color: hsla(39, 4, 13, 1);
+}
+.c-inverse-hsla {
+  color: hsla(51, 100, 97, 1);
+}
+.c-secondary-hsla {
+  color: hsla(37, 6, 23, 1);
+}
+.c-accent-hsla {
+  color: hsla(16, 82, 53, 1);
+}
+
+/* Utility classes for commonly needed background/border variants */
+.portfolio-2-bg {
+  background-color: #252422;
+}
+.portfolio-5-border {
+  border-color: #eb5e28;
+}
+.portfolio-5-bg {
+  background-color: #eb5e28;
+}
+
+/* Convenient bg/border aliases */
+.bg-primary {
+  background-color: #252422;
+}
+.border-accent {
+  border-color: #eb5e28;
+}
+.bg-accent {
+  background-color: #eb5e28;
+}
+
+/* Backwards compatibility: keep old classnames and map to aliases (no visual change)
+  — projects that still use `.portfolio-*` will continue to work. */
+.portfolio-1-hex,
+.c-muted {
+  color: #bfbab0;
+}
+.portfolio-2-hex,
+.c-primary {
+  color: #403d38;
+}
+.portfolio-3-hex,
+.c-inverse {
+  color: #fffdf1;
+}
+.portfolio-4-hex,
+.c-secondary {
+  color: #252422;
+}
+.portfolio-5-hex,
+.c-accent {
+  color: #eb5e28;
+}

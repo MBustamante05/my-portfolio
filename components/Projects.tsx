@@ -1,0 +1,94 @@
+'use client';
+import { Code } from "lucide-react";
+import { useState } from "react";
+import ProjectCard from "./ProjectCard";
+
+function Projects() {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
+  const projects = [
+    {
+      id: 1,
+      number: '01',
+      category: 'WEB APP',
+      title: 'Next Ventures',
+      description: 'A space for entrepreneurs to pitch ideas, explore others, and gain exposure with clean design',
+      gradient: 'from-[#EB5E28] to-[#FF7F50]',
+      year: '2024',
+      side: 'left' as const,
+      tech: ['NEXT.JS', 'REACT', 'TYPESCRIPT', 'BETTER_AUTH', 'GROQ', 'SENTRY', 'MARKDOWN', 'TAILWIND CSS', 'MOTION.DEV'],
+      image: "/projects/camara.png", 
+    },
+    {
+      id: 2,
+      number: '02',
+      category: 'MOBILE APP',
+      title: 'Finote App',
+      description: 'An intuitive mobile companion for organizing your digital wallets and analyzing your financial health',
+      gradient: 'from-[#BFBAB0] to-[#FFFDF1]',
+      year: '2025',
+      side: 'right' as const,
+      tech: ['EXPO', 'TYPESCRIPT', 'FIREBASE', 'ZOD', 'ZUSTAND', 'CLOUDINARY', 'REANIMATED', 'GIFTED-CHARTS'],
+      image: "/projects/neko.png",
+    },
+    {
+      id: 3,
+      number: '03',
+      category: 'WEB APP',
+      title: 'Zenith Minds',
+      description: 'Platform for connecting creative minds and fostering collaboration in digital spaces',
+      gradient: 'from-[#EB5E28] to-[#FF7F50]',
+      year: '2025',
+      side: 'left' as const,
+      tech: ['NEXT.JS', 'REACT', 'TYPESCRIPT', 'TAILWIND CSS', 'FRAMER MOTION'],
+      image: "/projects/andres.png",
+    }
+  ];
+
+  return (
+    <div className="min-h-screen mt-30">
+      <h1 className="text-[clamp(2rem,7vw,10rem)] font-bold mb-4 leading-none tracking-tight uppercase">Projects</h1>
+
+      {/* Timeline */}
+      <div className="max-w-7xl mx-auto relative">
+        {/* Vertical Dotted Line in Center */}
+        <div 
+          className="absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2"
+          style={{
+            backgroundImage: 'repeating-linear-gradient(to bottom, #BFBAB0 0, #FFFDF1 5px, transparent 5px, transparent 10px)'
+          }}
+        ></div>
+
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            number={project.number}
+            category={project.category}
+            title={project.title}
+            description={project.description}
+            gradient={project.gradient}
+            year={project.year}
+            side={project.side}
+            tech={project.tech}
+            image={project.image}
+            isHovered={hoveredCard === project.id}
+            onMouseEnter={() => setHoveredCard(project.id)}
+            onMouseLeave={() => setHoveredCard(null)}
+          />
+        ))}
+      </div>
+
+      {/* Footer decoration */}
+      <div className="max-w-7xl mx-auto mt-24 text-center text-neutral-600">
+        <div className="flex items-center justify-center gap-4">
+          <div className="w-16 h-px bg-neutral-800"></div>
+          <Code className="w-5 h-5" />
+          <div className="w-16 h-px bg-neutral-800"></div>
+        </div>
+        <p className="mt-4">Built with passion and creativity</p>
+      </div>
+    </div>
+  );
+}
+
+export default Projects;

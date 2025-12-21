@@ -108,7 +108,7 @@
     pointer-events: none;
 }
 
-.black-texture {
+.blackTexture {
     background: #000000;
     background-image:
         radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.3) 0%, transparent 50%),
@@ -119,7 +119,7 @@
     position: relative;
 }
 
-.black-texture::before {
+.blackTexture::before {
     content: '';
     position: absolute;
     top: 0;

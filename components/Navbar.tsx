@@ -1,15 +1,14 @@
-import React from 'react'
 
 function Navbar() {
-  const ulStyle = "hover:underline hover:underline-offset-4 hover:text-[#403D38] cursor-pointer duration-200"
+  const liStyle = "hover:underline hover:underline-offset-4 hover:decoration-[#EB5E28] cursor-pointer duration-200"
   return (
     <header className="flex justify-between items-center text-xl text-[#ABA49C]">
       <h1>FullStack Developer & Web Master</h1>
         <ul className='flex gap-5'>
-          <li className={ulStyle}>Home</li>
-          <li className={ulStyle}>About</li>
-          <li className={ulStyle}>Projects</li>
-          <li className={ulStyle}>Contact</li>
+          <li className={liStyle}>Home</li>
+          <li className={liStyle}>Projects</li>
+          <li className={liStyle}>About</li>
+          <li className={liStyle}>Contact</li>
         </ul>
     </header>
   )
