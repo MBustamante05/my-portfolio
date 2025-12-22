@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Landing from "@/components/Landing";
 import styles from "../components/textures.module.css";
 import Projects from "@/components/Projects";
@@ -6,12 +8,27 @@ import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
+  const [showContent, setShowContent] = useState(false);
+
   return (
-    <div className={`c-inverse ${styles.blackTexture} px-4 sm:px-8 md:px-12 lg:px-24 py-8 min-h-screen`}>
-      <Navbar />
-      
+    <motion.div
+      initial={{ opacity: 0, y: 1500, borderRadius: "150rem 150rem 0 0" }}
+      animate={{ opacity: 1, y: 0, borderRadius: "0px" }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      onAnimationComplete={() => setShowContent(true)}
+      className={`c-inverse ${styles.blackTexture} px-4 sm:px-8 md:px-12 lg:px-24 py-8 min-h-screen`}
+    >
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showContent ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Navbar />
+      </motion.div>
+
       {/* Desktop: Two columns, Mobile: Single column */}
       <div className="max-w-8xl mx-auto lg:flex lg:gap-8">
         {/* Profile - Sticky on desktop, at bottom on mobile */}
@@ -24,24 +41,35 @@ export default function Home() {
           <section id="home">
             <Landing />
           </section>
-          <section id="projects">
-            <Projects />
-          </section>
-          <section id="about">
-            <About />
-          </section>
-          <section id="contact">
-            <Contact />
-          </section>
-          
-          {/* Profile shown here on mobile (before footer) */}
-          <div className="lg:hidden mt-16 justify-center flex">
-            <Profile />
-          </div>
-          
-          <Footer />
+
+          <AnimatePresence>
+            {showContent && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <section id="projects">
+                  <Projects />
+                </section>
+                <section id="about">
+                  <About />
+                </section>
+                <section id="contact">
+                  <Contact />
+                </section>
+
+                {/* Profile shown here on mobile (before footer) */}
+                <div className="lg:hidden mt-16 justify-center flex">
+                  <Profile />
+                </div>
+
+                <Footer />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </main>
       </div>
-    </div>
+    </motion.div>
   );
 }
