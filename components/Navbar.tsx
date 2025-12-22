@@ -6,7 +6,7 @@ function Navbar() {
   const liStyle = "hover:underline hover:underline-offset-4 hover:decoration-[#EB5E28] cursor-pointer duration-200";
   
   return (
-    <header className="flex justify-between items-center text-xl text-[#ABA49C] mb-8 relative">
+    <header className="fixed top-0 left-0 right-0 z-50 md:relative p-4 sm:px-8 md:p-0 bg-black/95 md:bg-none flex justify-between items-center text-xl text-[#ABA49C] mb-8 ">
       <h1 className="text-sm sm:text-base md:text-xl">FullStack Developer & Web Master</h1>
       
       {/* Desktop Menu */}

@@ -37,7 +37,7 @@ export default function Home() {
         </aside>
 
         {/* Main content */}
-        <main className="flex-1 min-w-0">
+        <main className="flex-1 min-w-0 mt-10 md:mt-0">
           <section id="home">
             <Landing />
           </section>
