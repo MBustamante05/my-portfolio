@@ -46,14 +46,14 @@ function Projects() {
   ];
 
   return (
-    <div className="min-h-screen mt-30">
-      <h1 className="text-[clamp(2rem,7vw,10rem)] font-bold mb-4 leading-none tracking-tight uppercase">Projects</h1>
+    <div className="min-h-screen mt-16 md:mt-30">
+      <h1 className="text-5xl md:text-8xl  font-bold mb-8 md:mb-4 leading-none tracking-tight uppercase">Projects</h1>
 
       {/* Timeline */}
       <div className="max-w-7xl mx-auto relative">
         {/* Vertical Dotted Line in Center */}
         <div 
-          className="absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2"
+          className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px transform -translate-x-1/2"
           style={{
             backgroundImage: 'repeating-linear-gradient(to bottom, #BFBAB0 0, #FFFDF1 5px, transparent 5px, transparent 10px)'
           }}
@@ -65,7 +65,6 @@ function Projects() {
             number={project.number}
             category={project.category}
             title={project.title}
-            description={project.description}
             gradient={project.gradient}
             year={project.year}
             side={project.side}
@@ -79,7 +78,7 @@ function Projects() {
       </div>
 
       {/* Footer decoration */}
-      <div className="max-w-7xl mx-auto mt-24 text-center text-neutral-600">
+      <div className="max-w-7xl mx-auto mt-16 md:mt-24 text-center text-neutral-600">
         <div className="flex items-center justify-center gap-4">
           <div className="w-16 h-px bg-neutral-800"></div>
           <Code className="w-5 h-5" />

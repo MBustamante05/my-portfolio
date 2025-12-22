@@ -9,7 +9,7 @@ function Profile({ className }: Props) {
     "w-10 h-10 hover:opacity-80 hover:bg-[#FFFDF1] hover:text-[#252422] hover:rounded-2xl p-2 duration-300 transition-all cursor-pointer";
   return (
     <div
-      className={`${className} w-[350px] bg-neutral-900 text-[#FFFDF1] text-center px-8 py-10 flex flex-col items-center gap-2 rounded-lg sticky top-30 self-start`}
+      className={`${className} w-full sm:w-[350px] bg-neutral-900 text-[#FFFDF1] text-center px-8 py-10 flex flex-col items-center gap-2 rounded-2xl lg:sticky lg:top-30 self-start`}
     >
       <img
         src="/1.jpeg"

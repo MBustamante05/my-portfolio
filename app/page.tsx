@@ -9,16 +9,17 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className={`c-inverse ${styles.blackTexture} px-24 py-8 min-h-screen`}>
+    <div className={`c-inverse ${styles.blackTexture} px-4 sm:px-8 md:px-12 lg:px-24 py-8 min-h-screen`}>
       <Navbar />
-      {/* Layout de dos columnas */}
-      <div className="max-w-8xl mx-auto flex gap-8">
-        {/* Columna izquierda - Profile (Sticky) */}
-        <aside className="w-[350px] flex-shrink-0">
+      
+      {/* Desktop: Two columns, Mobile: Single column */}
+      <div className="max-w-8xl mx-auto lg:flex lg:gap-8">
+        {/* Profile - Sticky on desktop, at bottom on mobile */}
+        <aside className="hidden lg:block lg:w-[350px] lg:flex-shrink-0">
           <Profile />
         </aside>
 
-        {/* Columna derecha - Contenido que hace scroll */}
+        {/* Main content */}
         <main className="flex-1 min-w-0">
           <section id="home">
             <Landing />
@@ -32,6 +33,12 @@ export default function Home() {
           <section id="contact">
             <Contact />
           </section>
+          
+          {/* Profile shown here on mobile (before footer) */}
+          <div className="lg:hidden mt-16 justify-center flex">
+            <Profile />
+          </div>
+          
           <Footer />
         </main>
       </div>

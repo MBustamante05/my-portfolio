@@ -1,17 +1,52 @@
+'use client'
+import { useState } from "react";
 
 function Navbar() {
-  const liStyle = "hover:underline hover:underline-offset-4 hover:decoration-[#EB5E28] cursor-pointer duration-200"
+  const [isOpen, setIsOpen] = useState(false);
+  const liStyle = "hover:underline hover:underline-offset-4 hover:decoration-[#EB5E28] cursor-pointer duration-200";
+  
   return (
-    <header className="flex justify-between items-center text-xl text-[#ABA49C]">
-      <h1>FullStack Developer & Web Master</h1>
-        <ul className='flex gap-5'>
-          <li className={liStyle}><a href="#home">Home</a></li>
-          <li className={liStyle}><a href="#projects">Projects</a></li>
-          <li className={liStyle}><a href="#about">About</a></li>
-          <li className={liStyle}><a href="#contact">Contact</a></li>
+    <header className="flex justify-between items-center text-xl text-[#ABA49C] mb-8 relative">
+      <h1 className="text-sm sm:text-base md:text-xl">FullStack Developer & Web Master</h1>
+      
+      {/* Desktop Menu */}
+      <ul className='hidden md:flex gap-5'>
+        <li className={liStyle}><a href="#home">Home</a></li>
+        <li className={liStyle}><a href="#projects">Projects</a></li>
+        <li className={liStyle}><a href="#about">About</a></li>
+        <li className={liStyle}><a href="#contact">Contact</a></li>
+      </ul>
+
+      {/* Mobile Menu Button */}
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center z-50"
+        aria-label="Menu"
+      >
+        <span className={`w-6 h-0.5 bg-[#ABA49C] transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+        <span className={`w-6 h-0.5 bg-[#ABA49C] transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+        <span className={`w-6 h-0.5 bg-[#ABA49C] transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+      </button>
+
+      {/* Mobile Menu */}
+      <div className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+        <ul className='flex flex-col gap-8 items-center justify-center h-full text-2xl'>
+          <li className={liStyle} onClick={() => setIsOpen(false)}>
+            <a href="#home">Home</a>
+          </li>
+          <li className={liStyle} onClick={() => setIsOpen(false)}>
+            <a href="#projects">Projects</a>
+          </li>
+          <li className={liStyle} onClick={() => setIsOpen(false)}>
+            <a href="#about">About</a>
+          </li>
+          <li className={liStyle} onClick={() => setIsOpen(false)}>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
+      </div>
     </header>
-  )
+  );
 }
 
 export default Navbar
