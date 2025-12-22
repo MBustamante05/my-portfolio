@@ -2,25 +2,29 @@ import { ArrowUpRight } from "lucide-react"
 
 function About() {
   const langTools = [
+    "HTML",
+    "CSS",
     "JavaScript",
     "TypeScript",
-    "React",
-    "Next.js",
+    "Java",
+    "Python",
     "Node.js",
     "Tailwind CSS",
-    "Framer Motion",
   ];
 
   const frameworksLibs = [
+    "React",
+    "Next.js",
     "Express.js",
-    "Redux",
+    "NestJS",
+    "Framer Motion",
     "Jest",
-    "GraphQL",
-    "MongoDB",
-    "PostgreSQL",
   ];
 
   const otherSkills = [
+    "GraphQL",
+    "MongoDB",
+    "PostgreSQL",
     "Version Control (Git)",
     "Agile Methodologies",
     "UI/UX Design Principles",

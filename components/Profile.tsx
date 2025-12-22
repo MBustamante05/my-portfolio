@@ -26,8 +26,8 @@ function Profile({ className }: Props) {
         Software Engineer | Web Developer | <br /> FullStack Developer
       </p>
       <div className="flex gap-4 text-white">
-        <Instagram className={iconStyle} />
-        <Mail className={iconStyle} />
+        <a href="https://www.instagram.com/tgdev_x/"><Instagram className={iconStyle} /></a>
+        <a href="mailto:bmosquera0510@gmail.com"><Mail className={iconStyle} /></a>
       </div>
       <ContactBtn className="mt-18 w-fit" />
     </motion.div>
