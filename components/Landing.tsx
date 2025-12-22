@@ -1,6 +1,3 @@
-import { ArrowRight, Contact } from "lucide-react";
-import Navbar from "./Navbar";
-import Profile from "./Profile";
 import ContactBtn from "./ContactBtn";
 
 function Landing() {
@@ -9,11 +6,17 @@ function Landing() {
   return (
     <section className="c-muted pt-10 mb-20">
       <div className="mb-10">
-        <h1 className="text-[clamp(4rem,9vw,12rem)] font-bold mb-4 leading-none tracking-tight uppercase c-inverse">
+        <h1 className="hidden lg:block text-[clamp(4rem,9vw,12rem)] font-bold mb-4 leading-none tracking-tight uppercase c-inverse">
           FullStack{" "}
         </h1>
-        <h2 className="text-[clamp(3rem,8vw,10rem)] c-accent font-semibold mb-6 text-center leading-none tracking-tight uppercase ">
+        <h1 className="block lg:hidden text-[clamp(4rem,9vw,12rem)] font-bold mb-4 leading-none tracking-tight uppercase c-inverse">
+          Thiago{" "}
+        </h1>
+        <h2 className="hidden lg:block text-[clamp(3rem,8vw,10rem)] c-accent font-semibold mb-6 text-center leading-none tracking-tight uppercase ">
           Developer
+        </h2>
+        <h2 className="block lg:hidden text-[clamp(3rem,8vw,10rem)] c-accent font-semibold mb-6 text-center leading-none tracking-tight uppercase ">
+          Bustamante
         </h2>
       </div>
       <p className="text-lg md:text-xl mb-10 max-w-3xl">

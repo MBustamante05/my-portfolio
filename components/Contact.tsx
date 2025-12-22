@@ -1,23 +1,29 @@
 "use client";
-import { ArrowRight } from "lucide-react";
+import { Send } from "lucide-react";
 import { useState } from "react";
 
 function Contact() {
   const [isHovered, setIsHovered] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [text, setText] = useState('Send');
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+    setText('Thank you!');
+    setFormData({ name: '', email: '', message: '' });
+    setTimeout(() => {
+      setText('Send');
+    }, 3000);
   };
 
   return (
     <div className="mt-16 md:mt-30 justify-center flex flex-col items-center gap-8 sm:px-4">
       <div className="text-center">
-        <h1 className="text-[clamp(2rem,7vw,10rem)] font-bold leading-none tracking-tight uppercase text-end c-inverse">
+        <h1 className="text-5xl md:text-8xl font-bold leading-none tracking-tight uppercase text-end c-inverse">
           Let&apos;s Talk
         </h1>
-        <h2 className="text-[clamp(1.5rem,6vw,8rem)] font-bold c-accent leading-none tracking-tight uppercase mb-4 ">
+        <h2 className="text-4xl md:text-7xl font-bold c-accent leading-none tracking-tight uppercase mb-4 ">
           Contact!
         </h2>
       </div>
@@ -57,13 +63,14 @@ function Contact() {
           ></textarea>
         </div>
         <div
+          onClick={handleSubmit}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className={`flex items-center gap-1 bg-[#EB5E28] text-white px-6 py-3.5 rounded-4xl text-lg font-semibold hover:bg-[#d94e20] cursor-pointer duration-300 transition-all uppercase self-center mt-4`}
+          className={`flex items-center gap-2 bg-[#EB5E28] text-white px-6 py-3.5 rounded-4xl text-lg font-semibold hover:bg-[#d94e20] cursor-pointer duration-300 transition-all uppercase self-center mt-4`}
         >
-          <span>contact</span>
-          <ArrowRight
-            className={`w-5 ${isHovered ? "translate-x-1" : ""} duration-200 `}
+          <span>{text}</span>
+          <Send
+            className={`w-4 ${isHovered ? "translate-x-1 -translate-y-1" : ""} duration-200 `}
           />
         </div>
       </form>
