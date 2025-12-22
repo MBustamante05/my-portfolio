@@ -20,16 +20,16 @@ export default function Home() {
 
         {/* Columna derecha - Contenido que hace scroll */}
         <main className="flex-1 min-w-0">
-          <section>
+          <section id="home">
             <Landing />
           </section>
-          <section>
+          <section id="projects">
             <Projects />
           </section>
-          <section>
+          <section id="about">
             <About />
           </section>
-          <section>
+          <section id="contact">
             <Contact />
           </section>
           <Footer />
