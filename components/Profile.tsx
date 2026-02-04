@@ -12,13 +12,12 @@ function Profile({ className }: Props) {
     <motion.div
       initial={{ opacity: 0, y: 1500 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 2, type: "tween"}}
+      transition={{ duration: 2, type: "tween" }}
       className={`${className} w-full sm:w-[350px] bg-neutral-900 text-[#FFFDF1] text-center px-8 py-10 flex flex-col items-center gap-2 rounded-2xl lg:sticky lg:top-30 self-start`}
     >
-      <img
-        src="/1.jpeg"
-        alt="Profile"
-        className="rounded-full w-[250px] h-[250px] brightness-[1] object-fit cover "
+      <div
+        className="w-[250px] h-[250px] rounded-full bg-cover bg-[30%_50%] bg-no-repeat border-2 border-[#EB5E28]"
+        style={{ backgroundImage: "url('/profile2.jpg')", backgroundSize: "130%" }}
       />
       <h1 className="font-bold text-[25px] mt-5">Thiago Bustamante</h1>
       <span className="text-[#BFBAB0] mb-2">Cali, Colombia</span>
@@ -26,8 +25,12 @@ function Profile({ className }: Props) {
         Software Engineer | Web Developer | <br /> FullStack Developer
       </p>
       <div className="flex gap-4 text-white">
-        <a href="https://www.instagram.com/tgdev_x/"><Instagram className={iconStyle} /></a>
-        <a href="mailto:bmosquera0510@gmail.com"><Mail className={iconStyle} /></a>
+        <a href="https://www.instagram.com/tgdev_x/">
+          <Instagram className={iconStyle} />
+        </a>
+        <a href="mailto:bmosquera0510@gmail.com">
+          <Mail className={iconStyle} />
+        </a>
       </div>
       <ContactBtn className="mt-18 w-fit" />
     </motion.div>

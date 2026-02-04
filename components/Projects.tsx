@@ -35,7 +35,7 @@ function Projects() {
       id: 3,
       number: '03',
       category: 'WEB PAGE',
-      title: 'Zenith Minds',
+      title: 'ANDRES GOMEZ - PORTFOLIO',
       description: 'Platform for connecting creative minds and fostering collaboration in digital spaces',
       gradient: 'from-[#EB5E28] to-[#FF7F50]',
       year: '2025',
