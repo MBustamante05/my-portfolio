@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import { useState } from "react";
 
 function Navbar() {
@@ -11,10 +12,10 @@ function Navbar() {
       
       {/* Desktop Menu */}
       <ul className='hidden md:flex gap-5'>
-        <li className={liStyle}><a href="#home">Home</a></li>
-        <li className={liStyle}><a href="#projects">Projects</a></li>
-        <li className={liStyle}><a href="#about">About</a></li>
-        <li className={liStyle}><a href="#contact">Contact</a></li>
+        <li className={liStyle}><Link href="/#home">Home</Link></li>
+        <li className={liStyle}><Link href="/#projects">Projects</Link></li>
+        <li className={liStyle}><Link href="/#about">About</Link></li>
+        <li className={liStyle}><Link href="/#contact">Contact</Link></li>
       </ul>
 
       {/* Mobile Menu Button */}
@@ -32,16 +33,16 @@ function Navbar() {
       <div className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
         <ul className='flex flex-col gap-8 items-center justify-center h-full text-2xl'>
           <li className={liStyle} onClick={() => setIsOpen(false)}>
-            <a href="#home">Home</a>
+            <Link href="/#home">Home</Link>
           </li>
           <li className={liStyle} onClick={() => setIsOpen(false)}>
-            <a href="#projects">Projects</a>
+            <Link href="/#projects">Projects</Link>
           </li>
           <li className={liStyle} onClick={() => setIsOpen(false)}>
-            <a href="#about">About</a>
+            <Link href="/#about">About</Link>
           </li>
           <li className={liStyle} onClick={() => setIsOpen(false)}>
-            <a href="#contact">Contact</a>
+            <Link href="/#contact">Contact</Link>
           </li>
         </ul>
       </div>

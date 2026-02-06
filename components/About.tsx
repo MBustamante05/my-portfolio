@@ -6,8 +6,8 @@ function About() {
     "CSS",
     "JavaScript",
     "TypeScript",
-    "Java",
-    "Python",
+    // "Java",
+    // "Python",
     "Node.js",
     "Tailwind CSS",
   ];
@@ -22,9 +22,9 @@ function About() {
   ];
 
   const otherSkills = [
-    "GraphQL",
+    // "GraphQL",
     "MongoDB",
-    "PostgreSQL",
+    // "PostgreSQL",
     "Version Control (Git)",
     "Agile Methodologies",
     "UI/UX Design Principles",
